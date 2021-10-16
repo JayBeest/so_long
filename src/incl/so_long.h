@@ -6,7 +6,7 @@
 /*   By: jcorneli <marvin@codam.nl>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/15 20:19:41 by jcorneli          #+#    #+#             */
-/*   Updated: 2021/10/15 23:24:48 by jcorneli         ###   ########.fr       */
+/*   Updated: 2021/10/15 23:38:58 by jcorneli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@
 # define RESOLUTION_Y 600
 
 # define STEP 40
+# define PC_FILE "walk1.xpm"
+# defube
 
 # define KEY_RELEASE_MASK 1
 # define BUTTON_PRESS_MASK 2

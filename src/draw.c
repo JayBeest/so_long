@@ -27,7 +27,7 @@ void	init_background_image(t_mlx *mlx, t_img_data *image)
 	dst = image->img_address;
 	while (i < len)
 	{
-		dst[i] = 60;
+		dst[i] = 100;
 		i++;
 	}
 }

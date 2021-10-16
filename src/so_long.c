@@ -6,7 +6,7 @@
 /*   By: jcorneli <marvin@codam.nl>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/15 20:19:35 by jcorneli          #+#    #+#             */
-/*   Updated: 2021/10/15 23:42:42 by jcorneli         ###   ########.fr       */
+/*   Updated: 2021/10/15 23:45:51 by jcorneli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	init_default_scene(t_scene *scene)
 {
 	scene->res.x = RESOLUTION_X;
 	scene->res.y = RESOLUTION_Y;
-	scene->pc.file = "walk1.xpm";
+	scene->pc.file = PC_FILE;
 	scene->player.x = 0;
 	scene->player.y = 0;
 }
@@ -58,6 +58,12 @@ void	init_mlx_image(t_mlx *mlx, t_img_data *image, t_sprite *sprite)
 		&image->bits_per_pixel, &image->line_length, &image->endian);
 }
 
+void	init_sprites(t_mlx *mlx)
+{
+
+	init_mlx_image(mlx, &mlx->scene.pc.image, &mlx->scene.pc);
+}
+
 int	main(void)
 {
 	static t_mlx mlx;
@@ -66,7 +72,7 @@ int	main(void)
 	init_default_scene(&mlx.scene);
 	init_mlx(&mlx, &mlx.scene);
 	init_background_image(&mlx, &mlx.background);
-	init_mlx_image(&mlx, &mlx.scene.pc.image, &mlx.scene.pc);
+	init_sprites(&mlx);
 	hook_to_mlx(&mlx);
 	draw_frame_to_image(&mlx);
 	mlx_loop(mlx.mlx_ptr);
