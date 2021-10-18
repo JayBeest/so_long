@@ -25,8 +25,6 @@ int	kill(t_mlx *mlx)
 
 void	key_action_controls(t_scene *scene, t_key key_code, t_mlx *mlx)
 {
-	static t_bool	walk;
-
 	if (key_code == RIGHT && scene->player.x < RESOLUTION_X - STEP)
 		scene->player.x += STEP;
 	else if (key_code == LEFT && scene->player.x > 0)
