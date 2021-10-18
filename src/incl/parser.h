@@ -1,19 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   events.h                                           :+:      :+:    :+:   */
+/*   parser.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jcorneli <marvin@codam.nl>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/16 20:42:03 by jcorneli          #+#    #+#             */
-/*   Updated: 2021/10/16 20:42:03 by jcorneli         ###   ########.fr       */
+/*   Created: 2021/10/16 20:41:52 by jcorneli          #+#    #+#             */
+/*   Updated: 2021/10/16 21:15:46 by jcorneli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef EVENTS_H
-#define EVENTS_H
+#ifndef PARSER_H
+#define PARSER_H
 
-int	keypress(t_key key_code, t_mlx *mlx);
-int	kill(t_mlx *mlx);
+int	parse_map(char *file, t_scene *scene);
 
 #endif

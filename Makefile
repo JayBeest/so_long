@@ -1,7 +1,8 @@
 NAME = 		so_long
 SRC = 		so_long.c \
 			draw.c \
-			events.c
+			events.c \
+			parser.c
 SRC_DIR =	src
 OBJ_DIR	= 	$(SRC_DIR)/obj
 INCL = 		-I$(SRC_DIR)/incl

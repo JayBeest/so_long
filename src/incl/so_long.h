@@ -6,7 +6,7 @@
 /*   By: jcorneli <marvin@codam.nl>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/15 20:19:41 by jcorneli          #+#    #+#             */
-/*   Updated: 2021/10/15 23:38:58 by jcorneli         ###   ########.fr       */
+/*   Updated: 2021/10/16 22:16:32 by jcorneli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@
 
 # define STEP 40
 # define PC_FILE "walk1.xpm"
-# defube
 
 # define KEY_RELEASE_MASK 1
 # define BUTTON_PRESS_MASK 2
@@ -30,12 +29,6 @@
 # define BUTTON_PRESS 4
 # define MOTION_NOTIFY 6
 # define DESTROY_NOTIFY 17
-
-typedef enum e_bool
-{
-	FALSE,
-	TRUE
-}			t_bool;
 
 # ifdef __linux__
 
@@ -93,6 +86,7 @@ typedef enum e_key
 
 # endif
 
+
 typedef struct s_resolution
 {
 	int	x;
@@ -116,6 +110,15 @@ typedef struct s_grid
 	int	x;
 	int	y;
 }			t_grid;
+
+typedef enum e_tile_type
+{
+	WALL = '1',
+	SPACE = '0',
+	COIN = 'C',
+	PLAYER = 'P',
+	EXIT = 'E'
+}			t_tile_type;
 
 typedef struct s_img_data
 {
@@ -160,5 +163,6 @@ typedef struct s_mlx
 	t_scene					scene;
 	t_img_data				background;
 }		t_mlx;
+
 
 #endif

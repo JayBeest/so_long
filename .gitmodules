@@ -1,6 +1,0 @@
-[submodule "so_long"]
-	path = so_long
-	url = https://github.com/JayBeest/so_long.git
-[submodule "libft"]
-	path = libft
-	url = https://github.com/JayBeest/libft.git

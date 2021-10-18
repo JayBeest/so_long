@@ -6,7 +6,7 @@
 /*   By: jcorneli <marvin@codam.nl>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/15 20:19:35 by jcorneli          #+#    #+#             */
-/*   Updated: 2021/10/15 23:45:51 by jcorneli         ###   ########.fr       */
+/*   Updated: 2021/10/17 01:26:27 by jcorneli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 #include <so_long.h>
 #include <draw.h>
 #include <events.h>
+#include <parser.h>
 
 #include <stdio.h>
 
@@ -69,6 +70,8 @@ int	main(void)
 	static t_mlx mlx;
 //	t_bool_err parse_success;
 
+	if (parse_map("level1.ber", &mlx.scene) != 0)
+		return (printf("parse error\n"));
 	init_default_scene(&mlx.scene);
 	init_mlx(&mlx, &mlx.scene);
 	init_background_image(&mlx, &mlx.background);

@@ -6,10 +6,11 @@
 /*   By: jcorneli <marvin@codam.nl>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/15 23:41:15 by jcorneli          #+#    #+#             */
-/*   Updated: 2021/10/15 23:42:42 by jcorneli         ###   ########.fr       */
+/*   Updated: 2021/10/15 23:54:31 by jcorneli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <libft.h>
 #include <stdlib.h>
 #include <mlx.h>
 #include <so_long.h>
