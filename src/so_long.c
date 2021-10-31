@@ -6,7 +6,7 @@
 /*   By: jcorneli <marvin@codam.nl>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/15 20:19:35 by jcorneli          #+#    #+#             */
-/*   Updated: 2021/10/17 01:26:27 by jcorneli         ###   ########.fr       */
+/*   Updated: 2021/10/28 21:57:50 by jcorneli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,12 @@ void	init_default_scene(t_scene *scene)
 	scene->res.x = RESOLUTION_X;
 	scene->res.y = RESOLUTION_Y;
 	scene->pc.file = PC_FILE;
-	scene->player.x = 0;
-	scene->player.y = 0;
+	scene->player.position.x = 0;
+	scene->player.position.y = 130;
+	scene->player.speed.x = 23;
+	scene->player.speed.y = 16;
+	scene->player.accel = 1.08;
+	scene->background_fill = 80;
 }
 
 void	hook_to_mlx(t_mlx *mlx)
@@ -40,7 +44,7 @@ void	hook_to_mlx(t_mlx *mlx)
 //		(1L << BUTTON_PRESS_MASK), mouse_button, mlx);
 //	mlx_hook(mlx->mlx_window, MOTION_NOTIFY, \
 //		(1L << POINTER_MOTION_MASK), mouse_move, mlx);
-//	mlx_loop_hook(mlx->mlx_ptr, draw_frame_to_image, mlx);
+	mlx_loop_hook(mlx->mlx_ptr, draw_frame_to_image, mlx);
 }
 
 void	init_mlx(t_mlx *mlx, const t_scene *scene)
@@ -77,6 +81,6 @@ int	main(void)
 	init_background_image(&mlx, &mlx.background);
 	init_sprites(&mlx);
 	hook_to_mlx(&mlx);
-	draw_frame_to_image(&mlx);
 	mlx_loop(mlx.mlx_ptr);
+	return (0);
 }

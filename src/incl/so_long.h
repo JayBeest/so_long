@@ -6,7 +6,7 @@
 /*   By: jcorneli <marvin@codam.nl>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/15 20:19:41 by jcorneli          #+#    #+#             */
-/*   Updated: 2021/10/16 22:16:32 by jcorneli         ###   ########.fr       */
+/*   Updated: 2021/10/28 16:07:46 by jcorneli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,11 @@
 # define SO_LONG_H
 
 # define PROJECT "so_long"
-# define RESOLUTION_X 800
-# define RESOLUTION_Y 600
+# define RESOLUTION_X 1920
+# define RESOLUTION_Y 1080
 
 # define STEP 40
+# define SPEED_STEP 0.5
 # define PC_FILE "walk1.xpm"
 
 # define KEY_RELEASE_MASK 1
@@ -95,9 +96,15 @@ typedef struct s_resolution
 
 typedef struct s_position
 {
-	int	x;
-	int	y;
+	float	x;
+	float	y;
 }			t_position;
+
+typedef struct s_speed
+{
+	float	x;
+	float	y;
+}			t_speed;
 
 typedef struct s_size
 {
@@ -129,6 +136,13 @@ typedef struct s_img_data
 	int		endian;
 }			t_img_data;
 
+typedef struct s_movement
+{
+	t_position	position;
+	t_speed		speed;
+	float		accel;
+}			t_movement;
+
 typedef enum e_sprite_type
 {
 	PLAYER1,
@@ -148,8 +162,9 @@ typedef struct s_sprite
 
 typedef struct s_scene
 {
+	int 			background_fill;
 	t_resolution	res;
-	t_position		player;
+	t_movement		player;
 	t_grid			grid;
 	t_sprite 		map;
 	t_sprite		pc;
