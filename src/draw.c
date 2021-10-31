@@ -17,6 +17,8 @@
 
 #include <stdio.h>
 
+#include <stdio.h>
+
 void	put_pixel(t_img_data *image, t_position position, unsigned int colour)
 {
 	char	*pixel_address;
@@ -37,8 +39,10 @@ void	init_background_image(t_mlx *mlx, t_img_data *image)
 	image->img_ptr = mlx_new_image(mlx->mlx_ptr, mlx->scene.res.x, mlx->scene.res.y);
 	image->img_address = mlx_get_data_addr(image->img_ptr, \
 		&image->bits_per_pixel, &image->line_length, &image->endian);
+	printf("background_image_address = %p\n", image->img_address);
 	i = 0;
-	len = RESOLUTION_Y * image->line_length + RESOLUTION_X * (image->bits_per_pixel / 8);
+	len = RESOLUTION_Y * image->line_length;
+	printf("background_image_lebn= %d\n", len);
 	dst = image->img_address;
 	while (i < len)
 	{
